@@ -1,6 +1,8 @@
+<%= link_to team.team_name, team %>
 <%= div_for(team.athletes) do |athlete| %>
-  <li> <%= athlete.name %>
-    <%= link_to 'Drop', team_drop_athlete_path(@team, athlete), method: :delete %>
+  <li>
+    <%= athlete.name %>
+    <%= link_to 'Drop', team_drop_athlete_path(team, athlete), method: :delete %>
   </li>
 <% end %>
 <p>

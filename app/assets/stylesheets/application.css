@@ -22,3 +22,8 @@
   font-variant: initial;
   font-weight: bold;
 }
+
+#alert {
+  color: red;
+  font-weight: bold;
+}
