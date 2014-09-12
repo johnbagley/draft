@@ -1,6 +1,6 @@
 <div>
   <p></p>
-  You currently have <%= Team.number_of_players %> players on <%= @team.team_name %>
+  You currently have <%= @team.athletes.count %> players on <%= @team.team_name %>
 
   <%= render @team %>
 
