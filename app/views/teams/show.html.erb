@@ -1,31 +1,10 @@
 <div>
-  Players on this team: 
-  <%= Team.number_of_players %>
-  <ul>
-    <% @team.athletes.each do |athlete| %>
-      <li> <%= athlete.name %>
-        <%= link_to 'Drop', team_drop_athlete_path(@team, athlete), method: :delete %>
-        </li>
-    <% end %>
-  </ul>
+  <p></p>
+You currently have <%= Team.number_of_players %> players on <%= @team.team_name %>
+
+<%= render @team %>
+
+AVAILABLE ATHLETES: 
+<%= render @athletes %>
+
 </div>
-Display available athletes below:
-<p>
-<% @athletes.each do |athlete| %>
-  <div>
-    <%= athlete.rank %>
-    <%= athlete.name %>
-    <%= athlete.completions %>
-    <%= athlete.passing_yards %>
-    <%= athlete.passing_touchdowns %>
-    <%= athlete.interceptions %>
-    <%= athlete.rushes %>
-    <%= athlete.rushing_yards %>
-    <%= athlete.rushing_touchdowns %>
-    <%= athlete.receptions %>
-    <%= athlete.receiving_yards %>
-    <%= athlete.receiving_touchdowns %>
-    <%= athlete.points %>
-    <%= link_to 'Add', team_athlete_path(@team, athlete), method: :post %>
-  </div>
-<% end %>

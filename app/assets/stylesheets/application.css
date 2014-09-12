@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+.athlete {
+  font-style: italic;
+}
+
+.athlete a {
+  font-variant: initial;
+  font-weight: bold;
+}

@@ -1,1 +1,16 @@
-should display each athlete
+<%= div_for(athlete) do %>
+  <%= athlete.rank %>
+  <%= athlete.name %>
+  <%= athlete.completions %>
+  <%= athlete.passing_yards %>
+  <%= athlete.passing_touchdowns %>
+  <%= athlete.interceptions %>
+  <%= athlete.rushes %>
+  <%= athlete.rushing_yards %>
+  <%= athlete.rushing_touchdowns %>
+  <%= athlete.receptions %>
+  <%= athlete.receiving_yards %>
+  <%= athlete.receiving_touchdowns %>
+  <%= athlete.points %>
+  <%= link_to 'Add', team_athlete_path(@team, athlete), method: :post %>
+<% end %>
