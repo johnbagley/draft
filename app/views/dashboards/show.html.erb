@@ -1,0 +1,11 @@
+<p class='welcome'>
+  Welcome, <%= @user.email %>
+</p>
+
+<%= form_for @team do |form| %>
+  <%= form.label :team_name, 'Add a Team: ' %>
+  <%= form.text_field :team_name %>
+  <%= form.submit 'Create New Team' %>
+<% end %>
+
+<%= render @teams %>
