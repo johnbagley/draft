@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140912150616) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "athletes", force: true do |t|
     t.integer  "rank",                 default: 0
     t.string   "name"
@@ -38,7 +41,7 @@ ActiveRecord::Schema.define(version: 20140912150616) do
     t.datetime "updated_at"
   end
 
-  add_index "memberships", ["team_id", "athlete_id"], name: "index_memberships_on_team_id_and_athlete_id"
+  add_index "memberships", ["team_id", "athlete_id"], name: "index_memberships_on_team_id_and_athlete_id", using: :btree
 
   create_table "teams", force: true do |t|
     t.string   "team_name"
@@ -47,7 +50,7 @@ ActiveRecord::Schema.define(version: 20140912150616) do
     t.datetime "updated_at"
   end
 
-  add_index "teams", ["user_id"], name: "index_teams_on_user_id"
+  add_index "teams", ["user_id"], name: "index_teams_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email"
