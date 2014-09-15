@@ -1,5 +1,7 @@
 <div>
   You currently have <%= @team.athletes.count %> players on <%= @team.team_name %>
+<p>
+  Remaining budget: <%= Budget.remaining(@team) %>
 
   <%= render @team %>
 
