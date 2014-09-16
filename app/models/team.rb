@@ -3,5 +3,4 @@ class Team < ActiveRecord::Base
   has_many :memberships
   has_many :athletes, through: :memberships
 
-
 end

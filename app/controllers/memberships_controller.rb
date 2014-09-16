@@ -11,7 +11,11 @@ class MembershipsController < ApplicationController
       team.athletes.count >= MAX_NUMBER_OF_ATHLETES
       flash.alert = 'Max size already reached'
       redirect_to team
-    else 
+    elsif
+      team.athletes.where("name ilike '%qb%'").count == 4
+      flash.alert = "Max number of quarterbacks has already been reached"
+      redirect_to team
+    else
       team.athletes << athlete
       redirect_to team
     end
