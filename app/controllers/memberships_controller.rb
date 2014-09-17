@@ -9,7 +9,7 @@ class MembershipsController < ApplicationController
     if membership.persisted?
       flash.notice = "Added #{athlete.name}"
     else
-      flash.alert = "Unable to add #{athlete.name}: #{membership.errors.first[1].titlecase}"
+      flash.alert = "Unable to add #{athlete.name}: #{membership.errors.full_messages.first.titlecase}"
     end
     redirect_to team
   end
