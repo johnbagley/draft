@@ -8,14 +8,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
-gem 'high_voltage'
-group :test, :development do
-  gem 'rspec-rails', '~> 3.0.0'
-  gem 'capybara'
-end
 gem 'monban'
 gem 'monban-generators'
-gem "factory_girl_rails", "~> 4.0"
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'pg'

@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :teams, only: [:index, :new, :create, :show] do
     post 'add_athlete/:athlete_id' => 'memberships#create', as: 'athlete'
     delete 'drop_athlete/:athlete_id' => 'memberships#destroy', as: 'drop_athlete'
+    post 'load_ranking_list/:ranking_id' => 'rankings#create', as: 'ranking'
   end
 end

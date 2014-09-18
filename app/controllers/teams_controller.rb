@@ -4,6 +4,7 @@ class TeamsController < ApplicationController
     @teams = current_user.teams
     @team = current_user.teams.find(params[:id])
     @athletes = Athlete.all
+    @rankings = Ranking.all
   end
 
   def create
