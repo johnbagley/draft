@@ -28,6 +28,14 @@
   font-weight: bold;
 }
 
+.athlete th {
+  padding-right: 20px;
+}
+
+#team {
+  font-style: normal; 
+}
+
 #alert {
   color: red;
   font-weight: bold;

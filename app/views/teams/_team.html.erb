@@ -1,14 +1,21 @@
-<%# <%= link_to team.team_name, team %>
+<% team.athletes.each do |athlete| %>
+  <tr>
+    <td><%= athlete.rank %></td>
+    <td><strong><%= athlete.name %></strong></td>
+    <td><%= athlete.completions %></td>
+    <td><%= athlete.passing_yards %></td>
+    <td><%= athlete.passing_touchdowns %></td>
+    <td><%= athlete.interceptions %></td>
+    <td><%= athlete.rushes %></td>
+    <td><%= athlete.rushing_yards %></td>
+    <td><%= athlete.rushing_touchdowns %></td>
+    <td><%= athlete.receptions %></td>
+    <td><%= athlete.receiving_yards %></td>
+    <td><%= athlete.receiving_touchdowns %></td>
+    <td><%= athlete.points %></td>
+    <td><%= athlete.auction_value %></td>
+    <td><%= link_to 'Drop', team_drop_athlete_path(team, athlete), method: :delete %></td>
+  </tr>
+<% end %>
 
-<div id='team-memberships'>
-  <ul>
-    <% team.athletes.each do |athlete| %>
-      <li>
-        <%= athlete.name %>
-        <%= athlete.points %>
-        <%= link_to 'Drop', team_drop_athlete_path(team, athlete), method: :delete %>
-      </li>
-    <% end %>
-    <li>AVERAGE WEELKY POINTS: <%= Average.weekly_points(team).round(2) %></li>
-  </ul>
-</div>
+AVERAGE WEELKY POINTS: <%= Average.weekly_points(team).round(2) %>

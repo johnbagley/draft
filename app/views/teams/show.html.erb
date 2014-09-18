@@ -1,15 +1,43 @@
 <div>
-  <p>
-Select which expert's rankings you'd like to use:
-<p>
-  <%= render @rankings %>
-<p>
-  You currently have <%= @team.athletes.count %> players on <%= @team.team_name %>
-<p>
-  Remaining budget: <%= Budget.remaining(@team) %>
-  <%= render @team %>
+  <p> Select which expert's rankings you'd like to use:</p>
+  <p><%= render @rankings %></p>
+  <p>You currently have <%= @team.athletes.count %> players on <%= @team.team_name %></p>
+  <p>Remaining budget: <%= Budget.remaining(@team) %></p>
 
-  AVAILABLE ATHLETES:
-  <%= render @athletes %>
+  <table class="athlete" id="team">
+    <th>Rank</th>
+    <th>Name</th>
+    <th>Comp</th>
+    <th>Pass Yds</th>
+    <th>Pass TDs</th>
+    <th>Ints</th>
+    <th>Rushes</th>
+    <th>Rush Yds</th>
+    <th>Rush Tds</th>
+    <th>Recs</th>
+    <th>Rec Yds</th>
+    <th>Rec Tds</th>
+    <th>Points</th>
+    <th>AAV</th>
+    <%= render @team %>
+  </table>
 
+  <p>AVAILABLE ATHLETES:</p>
+  <table class="athlete">
+    <th>Rank</th>
+    <th>Name</th>
+    <th>Comp</th>
+    <th>Pass Yds</th>
+    <th>Pass TDs</th>
+    <th>Ints</th>
+    <th>Rushes</th>
+    <th>Rush Yds</th>
+    <th>Rush Tds</th>
+    <th>Recs</th>
+    <th>Rec Yds</th>
+    <th>Rec Tds</th>
+    <th>Points</th>
+    <th>AAV</th>
+    <%= render @athletes %>
+  </table>
 </div>

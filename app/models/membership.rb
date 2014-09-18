@@ -8,7 +8,7 @@ class Membership < ActiveRecord::Base
   validate :qb_position_available
 
   def qb_position_available
-    if qbs >= QB_MAX
+    if athlete.name.include?("QB") && qbs >= QB_MAX
       errors.add(:name, "Cannot have more than #{QB_MAX} Quarterbacks on team.")
     end
   end

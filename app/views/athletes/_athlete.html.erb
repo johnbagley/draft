@@ -1,18 +1,17 @@
-<%= div_for(athlete) do %>
-  <%= athlete.rank %>
-  <%= athlete.name %>
-  <%= athlete.completions %>
-  <%= athlete.passing_yards %>
-  <%= athlete.passing_touchdowns %>
-  <%= athlete.interceptions %>
-  <%= athlete.rushes %>
-  <%= athlete.rushing_yards %>
-  <%= athlete.rushing_touchdowns %>
-  <%= athlete.receptions %>
-  <%= athlete.receiving_yards %>
-  <%= athlete.receiving_touchdowns %>
-  <%= athlete.points %>
-  Auction Value: 
-  <%= athlete.auction_value %>
-  <%= link_to 'Add', team_athlete_path(@team, athlete), method: :post %>
-<% end %>
+<tr>
+  <td><%= athlete.rank %></td>
+  <td><%= athlete.name %></td>
+  <td><%= athlete.completions %></td>
+  <td><%= athlete.passing_yards %></td>
+  <td><%= athlete.passing_touchdowns %></td>
+  <td><%= athlete.interceptions %></td>
+  <td><%= athlete.rushes %></td>
+  <td><%= athlete.rushing_yards %></td>
+  <td><%= athlete.rushing_touchdowns %></td>
+  <td><%= athlete.receptions %></td>
+  <td><%= athlete.receiving_yards %></td>
+  <td><%= athlete.receiving_touchdowns %></td>
+  <td><%= athlete.points %></td>
+  <td><%= athlete.auction_value %></td>
+  <td><%= link_to 'Add', team_athlete_path(@team, athlete), method: :post %></td>
+</tr>
