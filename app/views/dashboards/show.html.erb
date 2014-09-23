@@ -5,6 +5,10 @@
 <%= form_for @team do |form| %>
   <%= form.label :team_name, 'Add a Team: ' %>
   <%= form.text_field :team_name %>
+  <div>
+    Select which ranking list you'd like to use: 
+    <%= collection_select(:team, :ranking_id, Ranking.all, :id, :name)   %>
+  </div>
   <%= form.submit 'Create New Team' %>
 <% end %>
 

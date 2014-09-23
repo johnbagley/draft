@@ -5,8 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-require 'csv'
 
-CSV.foreach('lib/assets/players.csv', headers: true)  do |row|
-  Athlete.create!(row.to_hash)
+berry_rankings = Ranking.create(name: "Berry")
+bagley_rankings = Ranking.create(name: "Bagley")
+
+require 'csv'
+rankings = [berry_rankings, bagley_rankings]
+
+rankings.each do |ranking|
+  CSV.foreach("lib/assets/#{ranking.name}.csv", headers: true)  do |row|
+    athlete_params = row.to_hash
+    athlete_params[:ranking_id] = ranking.id
+    Athlete.create!(athlete_params)
+  end
 end

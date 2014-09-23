@@ -3,7 +3,8 @@ class TeamsController < ApplicationController
   def show
     @teams = current_user.teams
     @team = current_user.teams.find(params[:id])
-    @athletes = Athlete.all
+    @ranking = @team.ranking
+    @athletes = @ranking.athletes
     @rankings = Ranking.all
   end
 
@@ -15,6 +16,6 @@ class TeamsController < ApplicationController
   private
 
   def team_params
-    params.require(:team).permit(:team_name).merge(user_id: current_user.id)
+    params.require(:team).permit(:team_name, :ranking_id).merge(user_id: current_user.id)
   end
 end
